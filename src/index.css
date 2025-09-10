@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Maison Luxe Design System - Royal Luxury Brand Colors */
+
+@layer base {
+  :root {
+    /* Maison Luxe Brand Colors - Maroon Palette */
+    --deep-maroon: 351 75% 24%;     /* #6B0F1A */
+    --light-maroon: 6 57% 49%;      /* #C44536 */
+    
+    /* Maison Luxe Brand Colors - Gold Palette */
+    --deep-gold: 45 89% 38%;        /* #B8860B */
+    --light-gold: 51 100% 50%;      /* #FFD700 */
+    
+    /* Neutral Colors */
+    --royal-white: 0 0% 100%;       /* #FFFFFF */
+    --charcoal-gray: 0 0% 18%;      /* #2E2E2E */
+    
+    /* Design System Colors */
+    --background: var(--royal-white);
+    --foreground: var(--charcoal-gray);
+
+    --card: var(--royal-white);
+    --card-foreground: var(--charcoal-gray);
+
+    --popover: var(--royal-white);
+    --popover-foreground: var(--charcoal-gray);
+
+    --primary: var(--deep-maroon);
+    --primary-foreground: var(--royal-white);
+
+    --secondary: var(--light-maroon);
+    --secondary-foreground: var(--royal-white);
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: var(--deep-gold);
+    --accent-foreground: var(--royal-white);
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: var(--royal-white);
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: var(--deep-maroon);
+
+    --radius: 0.75rem;
+    
+    /* Royal Gradients - Smooth Color Grading */
+    --gradient-maroon: linear-gradient(135deg, hsl(var(--deep-maroon)) 0%, hsl(351 60% 35%) 25%, hsl(351 50% 45%) 50%, hsl(var(--light-maroon)) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(var(--deep-gold)) 0%, hsl(45 75% 45%) 25%, hsl(45 85% 55%) 50%, hsl(var(--light-gold)) 100%);
+    --gradient-royal: linear-gradient(135deg, hsl(var(--deep-maroon)) 0%, hsl(351 65% 30%) 20%, hsl(25 70% 40%) 40%, hsl(35 75% 45%) 60%, hsl(var(--deep-gold)) 80%, hsl(var(--light-gold)) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--royal-white)) 0%, hsl(0 0% 99%) 30%, hsl(0 0% 98%) 70%, hsl(0 0% 97%) 100%);
+    --gradient-hero-overlay: linear-gradient(135deg, hsl(var(--deep-maroon) / 0.75) 0%, hsl(var(--deep-maroon) / 0.6) 15%, hsl(var(--charcoal-gray) / 0.5) 40%, hsl(var(--deep-maroon) / 0.3) 65%, hsl(var(--charcoal-gray) / 0.2) 85%, transparent 100%);
+    --gradient-card-overlay: linear-gradient(180deg, transparent 0%, hsl(var(--charcoal-gray) / 0.1) 40%, hsl(var(--charcoal-gray) / 0.2) 70%, hsl(var(--charcoal-gray) / 0.3) 100%);
+    
+    /* Smooth Text Gradients */
+    --text-gradient-maroon: linear-gradient(135deg, hsl(var(--deep-maroon)) 0%, hsl(351 65% 30%) 20%, hsl(351 55% 40%) 50%, hsl(var(--light-maroon)) 80%, hsl(6 50% 55%) 100%);
+    --text-gradient-gold: linear-gradient(135deg, hsl(var(--deep-gold)) 0%, hsl(45 80% 45%) 20%, hsl(45 90% 55%) 50%, hsl(var(--light-gold)) 80%, hsl(51 95% 60%) 100%);
+    
+    /* Royal Shadows - Enhanced */
+    --shadow-royal: 0 25px 50px -12px hsl(var(--deep-maroon) / 0.25), 0 10px 30px -10px hsl(var(--light-maroon) / 0.1);
+    --shadow-gold: 0 25px 50px -12px hsl(var(--deep-gold) / 0.25), 0 10px 30px -10px hsl(var(--light-gold) / 0.1);
+    --shadow-elegant: 0 10px 40px -10px hsl(var(--charcoal-gray) / 0.1);
+    
+    /* Animations */
+    --transition-royal: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s ease;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins;
+  }
+}
+
+@layer components {
+  /* Royal Button Variants - Smooth Gradients */
+  .btn-royal {
+    background: var(--gradient-maroon);
+    @apply text-royal-white font-semibold px-8 py-4 rounded-xl shadow-royal transition-all duration-500 hover:shadow-gold hover:scale-105;
+  }
+  
+  .btn-gold {
+    background: var(--gradient-gold);
+    @apply text-charcoal-gray font-semibold px-8 py-4 rounded-xl shadow-gold transition-all duration-500 hover:shadow-royal hover:scale-105;
+  }
+  
+  /* Royal Text Styles - Smooth Gradients */
+  .text-gradient-maroon {
+    background: var(--text-gradient-maroon);
+    @apply bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-gold {
+    background: var(--text-gradient-gold);
+    @apply bg-clip-text text-transparent;
+  }
+  
+  /* Royal Backgrounds */
+  .bg-gradient-maroon {
+    background: var(--gradient-maroon);
+  }
+  
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+  
+  .bg-gradient-royal {
+    background: var(--gradient-royal);
+  }
+  
+  /* Royal Cards */
+  .card-royal {
+    @apply bg-royal-white rounded-2xl shadow-elegant border border-border backdrop-blur-sm;
+  }
+  
+  /* Crown Animation */
+  .crown-float {
+    animation: crown-float 3s ease-in-out infinite;
+  }
+  
+  @keyframes crown-float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  /* Royal Hover Effects */
+  .royal-hover {
+    @apply transition-all duration-500 hover:shadow-royal hover:-translate-y-2;
+  }
+
+  /* Button Click Animation */
+  .btn-click {
+    @apply active:scale-95 transition-transform duration-150;
+  }
+
+  /* Smooth Page Transition */
+  .page-transition {
+    @apply animate-fade-in;
+  }
+}
