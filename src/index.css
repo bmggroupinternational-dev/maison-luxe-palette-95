@@ -203,4 +203,41 @@
   .page-transition {
     @apply animate-fade-in;
   }
+
+  /* Enhanced Scroll Animations */
+  .scroll-reveal {
+    @apply opacity-0 translate-y-8 transition-all duration-700;
+  }
+
+  .scroll-reveal.active {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .parallax-bg {
+    @apply transition-transform duration-75 ease-out;
+  }
+
+  /* Enhanced Button Animations */
+  .btn-click {
+    @apply active:scale-95 transition-transform duration-150;
+  }
+
+  .btn-hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  /* Card Animations */
+  .card-hover {
+    @apply transition-all duration-500 hover:shadow-royal hover:-translate-y-2 hover:scale-[1.02];
+  }
+
+  /* Text Animations */
+  .text-reveal {
+    @apply opacity-0 animate-fade-in;
+  }
+
+  .stagger-children > * {
+    @apply animate-fade-in;
+    animation-delay: calc(var(--stagger-delay, 0) * 0.1s);
+  }
 }
