@@ -11,7 +11,6 @@ const Header = () => {
   const navItems = [
     { label: "Home", href: "#home" },
     { label: "Apartments", href: "/apartments" },
-    { label: "Amenities", href: "#amenities" },
     { label: "Location", href: "#location" },
     { label: "Contact", href: "/contact" }
   ];
@@ -22,18 +21,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="crown-float">
-              <Crown className="w-8 h-8 text-deep-gold" strokeWidth={1.5} />
-            </div>
-            <div className="font-poppins">
-              <h1 className="text-xl font-bold">
-                <span className="text-gradient-maroon">MAISON</span>{" "}
-                <span className="text-gradient-gold">LUXE</span>
-              </h1>
-              <p className="text-xs text-muted-foreground uppercase tracking-wide">
-                BY WHISTLING WOODS
-              </p>
-            </div>
+            <img 
+              src="/assets/logo.png" 
+              alt="Maison Luxe by Whistling Woods Logo" 
+              className="h-12 w-auto object-contain hover:scale-105 transition-transform duration-300"
+            />
           </div>
 
           {/* Desktop Navigation */}

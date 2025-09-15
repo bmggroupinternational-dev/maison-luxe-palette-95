@@ -3,6 +3,9 @@ import useImagePreloader from '@/hooks/useImagePreloader';
 
 // All images used across the site for preloading
 const criticalImages = [
+  // Header logo (highest priority)
+  '/assets/logo.png',
+  
   // Hero and above-the-fold images (high priority)
   '/lovable-uploads/bce1d982-9fcf-4c18-a1ac-cd2fc531fd3a.png',
   
