@@ -14,6 +14,8 @@ const Hero = () => {
           src="/lovable-uploads/bce1d982-9fcf-4c18-a1ac-cd2fc531fd3a.png" 
           alt="Luxury apartment interior at Maison Luxe"
           className="w-full h-full object-cover"
+          loading="eager"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-hero-overlay"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-deep-maroon/40 via-charcoal-gray/20 to-transparent"></div>

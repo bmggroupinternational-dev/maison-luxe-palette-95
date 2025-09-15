@@ -40,6 +40,8 @@ const Restaurant = () => {
           src="/lovable-uploads/a8e4d933-6da7-460b-9b67-56645a8c215a.png"
           alt="Fine dining restaurant"
           className="w-full h-[120%] object-cover"
+          loading="lazy"
+          fetchPriority="auto"
         />
       </motion.div>
 

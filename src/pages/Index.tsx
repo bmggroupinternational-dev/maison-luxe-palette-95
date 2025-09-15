@@ -7,10 +7,12 @@ import Features from "@/components/Features";
 import RelaxingExperiences from "@/components/RelaxingExperiences";
 import Gallery from "@/components/Gallery";
 import Footer from "@/components/Footer";
+import ImageOptimizer from "@/components/ImageOptimizer";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <ImageOptimizer />
       <Header />
       <main>
         <section id="home">
