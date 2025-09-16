@@ -29,7 +29,7 @@ const Restaurant = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="relative py-20 overflow-hidden">
+    <section ref={sectionRef} className="relative py-24 overflow-hidden">
       {/* Parallax Background */}
       <motion.div 
         style={{ y: backgroundY }}
@@ -45,71 +45,82 @@ const Restaurant = () => {
         />
       </motion.div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-20 items-start">
           {/* Content Side */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-royal-white"
+            className="text-royal-white space-y-8"
           >
-            <Badge variant="outline" className="mb-4 border-royal-white/30 text-royal-white">
-              <ChefHat className="w-4 h-4 mr-2" />
-              Fine Dining
-            </Badge>
-            
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-gradient-gold">Culinary</span>
-              <br />
-              Excellence
-            </h2>
-            
-            <p className="text-lg text-royal-white/90 mb-8 leading-relaxed">
-              Experience extraordinary cuisine crafted by world-renowned chefs in an atmosphere of refined elegance. Our restaurant offers an unforgettable journey through innovative flavors and impeccable presentation.
-            </p>
+            <div className="space-y-6">
+              <Badge variant="outline" className="mb-6 border-royal-white/30 text-royal-white px-4 py-2">
+                <ChefHat className="w-4 h-4 mr-2" />
+                Fine Dining Experience
+              </Badge>
+              
+              <h2 className="text-5xl md:text-6xl font-bold leading-tight">
+                <span className="text-gradient-gold">Culinary</span>
+                <br />
+                <span className="text-royal-white">Excellence</span>
+              </h2>
+              
+              <div className="space-y-4">
+                <p className="text-xl text-royal-white/90 leading-relaxed">
+                  Experience extraordinary cuisine crafted by world-renowned chefs in an atmosphere of refined elegance.
+                </p>
+                <p className="text-lg text-royal-white/80 leading-relaxed">
+                  Our restaurant offers an unforgettable journey through innovative flavors and impeccable presentation, where every dish tells a story of culinary mastery.
+                </p>
+              </div>
+            </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-10">
               <motion.div 
                 whileHover={{ scale: 1.05 }}
-                className="text-center"
+                className="text-center p-4"
               >
-                <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-3">
-                  <Clock className="w-6 h-6 text-light-gold" />
+                <div className="w-16 h-16 rounded-full bg-deep-gold/20 flex items-center justify-center mx-auto mb-4">
+                  <Clock className="w-8 h-8 text-light-gold" />
                 </div>
-                <div className="text-sm font-medium">Dinner</div>
-                <div className="text-xs text-royal-white/70">6:00 PM - 11:00 PM</div>
+                <div className="text-base font-semibold text-royal-white mb-1">Dinner Service</div>
+                <div className="text-sm text-royal-white/70">6:00 PM - 11:00 PM</div>
               </motion.div>
               
               <motion.div 
                 whileHover={{ scale: 1.05 }}
-                className="text-center"
+                className="text-center p-4"
               >
-                <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-3">
-                  <MapPin className="w-6 h-6 text-light-gold" />
+                <div className="w-16 h-16 rounded-full bg-deep-gold/20 flex items-center justify-center mx-auto mb-4">
+                  <MapPin className="w-8 h-8 text-light-gold" />
                 </div>
-                <div className="text-sm font-medium">Location</div>
-                <div className="text-xs text-royal-white/70">Ground Floor</div>
+                <div className="text-base font-semibold text-royal-white mb-1">Location</div>
+                <div className="text-sm text-royal-white/70">Ground Floor Lobby</div>
               </motion.div>
               
               <motion.div 
                 whileHover={{ scale: 1.05 }}
-                className="text-center"
+                className="text-center p-4"
               >
-                <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-3">
-                  <Star className="w-6 h-6 text-light-gold" />
+                <div className="w-16 h-16 rounded-full bg-deep-gold/20 flex items-center justify-center mx-auto mb-4">
+                  <Star className="w-8 h-8 text-light-gold" />
                 </div>
-                <div className="text-sm font-medium">Michelin</div>
-                <div className="text-xs text-royal-white/70">Recommended</div>
+                <div className="text-base font-semibold text-royal-white mb-1">Award Winning</div>
+                <div className="text-sm text-royal-white/70">Michelin Recommended</div>
               </motion.div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="btn-gold flex-1">
+            <div className="flex flex-col sm:flex-row gap-6">
+              <Button variant="royal" size="lg" className="flex-1 text-lg py-4">
                 Reserve Table
               </Button>
-              <Button variant="outline" className="border-royal-white/30 text-royal-white hover:bg-royal-white/10 flex-1">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="border-royal-white/30 text-royal-white hover:bg-royal-white/10 flex-1 text-lg py-4"
+              >
                 View Menu
               </Button>
             </div>
@@ -121,7 +132,7 @@ const Restaurant = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-8 xl:mt-8"
           >
             {menuHighlights.map((section, index) => (
               <motion.div
@@ -130,13 +141,13 @@ const Restaurant = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="card-royal bg-royal-white/10 backdrop-blur-sm border-royal-white/20"
+                className="card-royal bg-royal-white/15 backdrop-blur-sm border-royal-white/30 royal-hover"
               >
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-royal-white mb-4">
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-royal-white mb-6 text-gradient-gold">
                     {section.category}
                   </h3>
-                  <div className="space-y-2">
+                  <div className="space-y-4">
                     {section.items.map((item, itemIndex) => (
                       <motion.div
                         key={item}
@@ -144,10 +155,10 @@ const Restaurant = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.4, delay: (index * 0.1) + (itemIndex * 0.05) }}
                         viewport={{ once: true }}
-                        className="flex items-center gap-3 text-royal-white/90 hover:text-light-gold transition-colors cursor-pointer"
+                        className="flex items-center gap-4 text-royal-white/90 hover:text-light-gold transition-colors cursor-pointer p-2 rounded-lg hover:bg-royal-white/10"
                       >
-                        <div className="w-2 h-2 rounded-full bg-accent" />
-                        <span className="text-sm">{item}</span>
+                        <div className="w-3 h-3 rounded-full bg-deep-gold" />
+                        <span className="text-base font-medium">{item}</span>
                       </motion.div>
                     ))}
                   </div>
