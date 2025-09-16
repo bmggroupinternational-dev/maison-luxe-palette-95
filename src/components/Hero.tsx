@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Crown, MapPin, Star, Award } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { smoothScrollTo } from "@/utils/navigation";
+import BookingWidget from "@/components/BookingWidget";
 // Using one of the uploaded luxury apartment images as hero background
 
 const Hero = () => {
@@ -124,6 +125,11 @@ const Hero = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Booking Widget */}
+      <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 w-full max-w-5xl px-6">
+        <BookingWidget />
       </div>
 
       {/* Scroll Indicator */}

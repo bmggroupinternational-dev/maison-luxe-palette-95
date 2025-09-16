@@ -1,9 +1,32 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Crown, Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+import { Crown, Phone, Mail, MapPin, Clock, Send, Calendar } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { format } from "date-fns";
 
 const Contact = () => {
+  const [isBooking, setIsBooking] = useState(false);
+  const [bookingDates, setBookingDates] = useState<{
+    checkIn: string;
+    checkOut: string;
+  } | null>(null);
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const type = urlParams.get('type');
+    const checkIn = urlParams.get('checkIn');
+    const checkOut = urlParams.get('checkOut');
+
+    if (type === 'booking' && checkIn && checkOut) {
+      setIsBooking(true);
+      setBookingDates({
+        checkIn: format(new Date(checkIn), 'MMM dd, yyyy'),
+        checkOut: format(new Date(checkOut), 'MMM dd, yyyy')
+      });
+    }
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -15,13 +38,29 @@ const Contact = () => {
             <Crown className="w-16 h-16 text-deep-gold mx-auto" strokeWidth={1.5} />
           </div>
           <h1 className="text-5xl lg:text-6xl font-bold font-poppins mb-6">
-            <span className="text-gradient-maroon">Get in</span>{" "}
-            <span className="text-gradient-gold">Touch</span>
+            <span className="text-gradient-maroon">{isBooking ? 'Complete Your' : 'Get in'}</span>{" "}
+            <span className="text-gradient-gold">{isBooking ? 'Booking' : 'Touch'}</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to experience luxury living? Contact our dedicated team to schedule a viewing
-            or learn more about our premium apartments.
+            {isBooking 
+              ? 'Finalize your luxury apartment booking. Our team will contact you within 24 hours to confirm your reservation.'
+              : 'Ready to experience luxury living? Contact our dedicated team to schedule a viewing or learn more about our premium apartments.'
+            }
           </p>
+          
+          {isBooking && bookingDates && (
+            <div className="mt-8 inline-flex items-center gap-6 bg-deep-gold/10 rounded-full px-8 py-4">
+              <div className="flex items-center gap-2">
+                <Calendar className="w-5 h-5 text-deep-gold" />
+                <span className="text-deep-maroon font-medium">Check In: {bookingDates.checkIn}</span>
+              </div>
+              <div className="w-px h-6 bg-deep-gold/30"></div>
+              <div className="flex items-center gap-2">
+                <Calendar className="w-5 h-5 text-deep-gold" />
+                <span className="text-deep-maroon font-medium">Check Out: {bookingDates.checkOut}</span>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -98,7 +137,9 @@ const Contact = () => {
 
             {/* Contact Form */}
             <div className="card-royal p-8">
-              <h2 className="text-3xl font-bold text-deep-maroon mb-6">Send us a Message</h2>
+              <h2 className="text-3xl font-bold text-deep-maroon mb-6">
+                {isBooking ? 'Booking Details' : 'Send us a Message'}
+              </h2>
               <form className="space-y-6">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
@@ -145,33 +186,52 @@ const Contact = () => {
                   />
                 </div>
 
+                {isBooking && (
+                  <div>
+                    <label className="block text-sm font-medium text-deep-maroon mb-2">
+                      Number of Guests
+                    </label>
+                    <select className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-deep-gold focus:border-transparent transition-all">
+                      <option>Select number of guests</option>
+                      <option>1 Guest</option>
+                      <option>2 Guests</option>
+                      <option>3 Guests</option>
+                      <option>4 Guests</option>
+                      <option>5+ Guests</option>
+                    </select>
+                  </div>
+                )}
+
                 <div>
                   <label className="block text-sm font-medium text-deep-maroon mb-2">
-                    Interest
+                    {isBooking ? 'Apartment Type' : 'Interest'}
                   </label>
                   <select className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-deep-gold focus:border-transparent transition-all">
-                    <option>Select your interest</option>
+                    <option>{isBooking ? 'Select apartment type' : 'Select your interest'}</option>
                     <option>Royal Suite</option>
                     <option>Executive Suite</option>
                     <option>Luxury Studio</option>
-                    <option>General Inquiry</option>
+                    {!isBooking && <option>General Inquiry</option>}
                   </select>
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-deep-maroon mb-2">
-                    Message
+                    {isBooking ? 'Special Requests' : 'Message'}
                   </label>
                   <textarea
                     rows={4}
                     className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-deep-gold focus:border-transparent transition-all"
-                    placeholder="Tell us about your luxury living requirements..."
+                    placeholder={isBooking 
+                      ? "Any special requests for your stay? (early check-in, late check-out, etc.)"
+                      : "Tell us about your luxury living requirements..."
+                    }
                   ></textarea>
                 </div>
 
                 <Button variant="royal" size="lg" className="w-full">
                   <Send className="w-5 h-5 mr-2" />
-                  Send Message
+                  {isBooking ? 'Confirm Booking Request' : 'Send Message'}
                 </Button>
               </form>
             </div>
