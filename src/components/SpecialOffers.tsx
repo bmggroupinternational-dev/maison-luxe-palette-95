@@ -54,24 +54,27 @@ const SpecialOffers = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-subtle">
+    <section className="py-24 bg-gradient-subtle relative overflow-hidden">
+      {/* Luxury Background Elements */}
+      <div className="absolute inset-0 floating-particles opacity-30"></div>
+      
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <Badge variant="outline" className="mb-4 border-primary/20">
-            <Star className="w-4 h-4 mr-2" />
-            Special Offers
+          <Badge className="mb-6 bg-gradient-glass backdrop-blur-xl border border-champagne-gold/30 text-imperial-burgundy px-4 py-2">
+            <Crown className="w-4 h-4 mr-2" />
+            Royal Special Offers
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold text-gradient-maroon mb-6">
+          <h2 className="text-5xl md:text-6xl font-playfair font-bold text-gradient-imperial mb-8">
             Exclusive Luxury Experiences
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Discover our carefully curated special offers designed to elevate your stay with exceptional value and unforgettable experiences.
+          <p className="text-xl text-charcoal-gray/80 max-w-3xl mx-auto font-cormorant leading-relaxed">
+            Discover our carefully curated royal offers designed to elevate your stay with exceptional luxury and unforgettable experiences worthy of royalty.
           </p>
         </motion.div>
 
@@ -80,16 +83,16 @@ const SpecialOffers = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
         >
           {offers.map((offer) => (
             <motion.div
               key={offer.id}
               variants={cardVariants}
-              whileHover={{ y: -10, scale: 1.02 }}
-              className="group relative overflow-hidden rounded-2xl bg-card shadow-elegant border border-border"
+              whileHover={{ y: -15, scale: 1.03 }}
+              className="group relative overflow-hidden card-premium luxury-hover"
             >
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-72 overflow-hidden">
                 <img 
                   src={offer.image} 
                   alt={offer.title}
@@ -97,38 +100,38 @@ const SpecialOffers = () => {
                   loading="lazy"
                   fetchPriority="auto"
                 />
-                <div className="absolute inset-0 bg-gradient-card-overlay" />
-                <Badge className="absolute top-4 right-4 bg-accent text-accent-foreground">
+                <div className="absolute inset-0 bg-gradient-to-t from-imperial-burgundy/60 via-transparent to-transparent" />
+                <Badge className="absolute top-6 right-6 bg-gradient-gold text-obsidian font-bold px-4 py-2 shadow-gold">
                   {offer.discount}
                 </Badge>
               </div>
               
-              <div className="p-6">
-                <div className="flex items-center gap-2 mb-3">
-                  <Crown className="w-5 h-5 text-primary" />
-                  <span className="text-sm text-primary font-medium">{offer.validUntil}</span>
+              <div className="p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <Crown className="w-6 h-6 text-champagne-gold" />
+                  <span className="text-sm text-imperial-burgundy font-cormorant font-semibold tracking-wide">{offer.validUntil}</span>
                 </div>
                 
-                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                <h3 className="text-2xl font-playfair font-bold text-imperial-burgundy mb-4 group-hover:text-gradient-imperial transition-all duration-300">
                   {offer.title}
                 </h3>
                 
-                <p className="text-muted-foreground mb-4 text-sm">
+                <p className="text-charcoal-gray/80 mb-6 text-base font-cormorant leading-relaxed">
                   {offer.description}
                 </p>
                 
-                <div className="space-y-2 mb-6">
+                <div className="space-y-3 mb-8">
                   {offer.features.map((feature, index) => (
-                    <div key={index} className="flex items-center gap-2 text-sm">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                      <span>{feature}</span>
+                    <div key={index} className="flex items-center gap-3 text-sm">
+                      <div className="w-2 h-2 rounded-full bg-gradient-gold shadow-sm" />
+                      <span className="font-medium text-charcoal-gray">{feature}</span>
                     </div>
                   ))}
                 </div>
                 
-                <Button className="w-full btn-royal group-hover:shadow-gold transition-all duration-300">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  Book This Offer
+                <Button className="w-full bg-gradient-imperial text-royal-white font-semibold py-4 rounded-xl shadow-imperial hover:shadow-luxury hover:scale-105 transition-all duration-500 group-hover:bg-gradient-royal">
+                  <Calendar className="w-5 h-5 mr-2" />
+                  Reserve Royal Offer
                 </Button>
               </div>
             </motion.div>
@@ -140,10 +143,15 @@ const SpecialOffers = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="text-center mt-12"
+          className="text-center mt-16"
         >
-          <Button variant="outline" size="lg" className="border-primary/20 hover:border-primary hover:bg-primary/5">
-            View All Offers
+          <Button 
+            variant="imperial-outline" 
+            size="lg" 
+            className="px-8 py-4 text-lg font-semibold"
+          >
+            <Crown className="w-5 h-5 mr-2" />
+            View All Royal Offers
           </Button>
         </motion.div>
       </div>

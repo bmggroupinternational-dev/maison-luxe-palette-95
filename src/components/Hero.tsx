@@ -26,113 +26,134 @@ const Hero = () => {
       <div className="relative z-10 flex-1 flex items-center justify-center pt-20 pb-40">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center lg:text-left w-full">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-             {/* Left Content */}
-             <div className="space-y-8">
-               {/* Crown Logo Animation */}
-               <div className="flex justify-center lg:justify-start">
-                 <div className="crown-float">
-                   <Crown className="w-16 h-16 text-light-gold" strokeWidth={1.5} />
-                 </div>
-               </div>
+              {/* Left Content */}
+              <div className="space-y-8 floating-particles">
+                {/* Royal Crown Logo Animation */}
+                <div className="flex justify-center lg:justify-start">
+                  <div className="crown-float">
+                    <Crown className="w-20 h-20 text-champagne-gold drop-shadow-2xl" strokeWidth={1} />
+                  </div>
+                </div>
 
-               {/* Brand Name */}
-               <div className="space-y-4">
-                 <h1 className="text-6xl lg:text-7xl font-bold font-poppins">
-                   <span className="text-gradient-maroon">MAISON</span>
-                   <br />
-                   <span className="text-gradient-gold">LUXE</span>
-                 </h1>
-                 <p className="text-lg font-medium text-muted-foreground uppercase tracking-wide">
-                   BY WHISTLING WOODS
-                 </p>
-               </div>
+                {/* Brand Name with Royal Typography */}
+                <div className="space-y-6">
+                  <h1 className="text-7xl lg:text-8xl font-playfair font-black leading-none">
+                    <span className="text-gradient-imperial block">MAISON</span>
+                    <span className="text-gradient-gold block">LUXE</span>
+                  </h1>
+                  <p className="text-xl font-cormorant font-medium text-champagne-gold/90 uppercase tracking-[0.3em]">
+                    BY WHISTLING WOODS
+                  </p>
+                </div>
 
-               {/* Tagline */}
-               <div className="space-y-6">
-                 <h2 className="text-3xl lg:text-4xl font-semibold text-royal-white leading-tight">
-                   Luxury Living, <span className="text-gradient-gold">Redefined</span>
-                 </h2>
-                 <p className="text-xl text-royal-white/90 max-w-2xl leading-relaxed">
-                   Experience unmatched comfort and elegance in our premium apartments. 
-                   Your royal address in the heart of Dodoma, Tanzania.
-                 </p>
-               </div>
+                {/* Premium Tagline */}
+                <div className="space-y-6">
+                  <h2 className="text-4xl lg:text-5xl font-playfair font-semibold text-royal-white leading-tight">
+                    Royal Living, <span className="text-gradient-metallic">Redefined</span>
+                  </h2>
+                  <p className="text-xl text-royal-white/90 max-w-2xl leading-relaxed font-cormorant">
+                    Experience unmatched luxury and elegance in our premium royal suites. 
+                    Your exclusive sanctuary in the heart of Dodoma, Tanzania.
+                  </p>
+                </div>
 
-               {/* Location Badge */}
-               <div className="flex items-center justify-center lg:justify-start gap-2 text-light-gold">
-                 <MapPin className="w-5 h-5" />
-                 <span className="font-medium">Dodoma, Tanzania</span>
-               </div>
+                {/* Location Badge with Royal Styling */}
+                <div className="flex items-center justify-center lg:justify-start gap-3 card-glass p-4 rounded-xl w-fit">
+                  <MapPin className="w-6 h-6 text-champagne-gold" />
+                  <span className="font-cormorant font-medium text-lg text-charcoal-gray">Dodoma, Tanzania</span>
+                </div>
 
-               {/* CTA Buttons */}
-               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                 <Button 
-                   variant="royal" 
-                   size="lg" 
-                   className="text-lg px-8 py-6"
-                   onClick={() => navigate("/apartments")}
-                 >
-                   Explore Apartments
-                 </Button>
-                 <Button 
-                   variant="gold-outline" 
-                   size="lg" 
-                   className="text-lg px-8 py-6"
-                   onClick={() => navigate("/contact")}
-                 >
-                   Book Your Stay
-                 </Button>
-               </div>
+                {/* Royal CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start pt-4">
+                  <Button 
+                    className="bg-gradient-imperial text-royal-white font-semibold text-lg px-10 py-6 rounded-xl shadow-imperial hover:shadow-luxury hover:scale-105 transition-all duration-500 relative overflow-hidden group"
+                    onClick={() => navigate("/apartments")}
+                  >
+                    <span className="relative z-10 flex items-center gap-3">
+                      <Crown className="w-5 h-5" />
+                      Explore Royal Suites
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-glass opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+                  </Button>
+                  <Button 
+                    className="bg-gradient-glass backdrop-blur-xl text-charcoal-gray font-semibold text-lg px-10 py-6 rounded-xl border-2 border-champagne-gold/30 hover:border-champagne-gold/60 shadow-glass hover:shadow-gold hover:scale-105 transition-all duration-500"
+                    onClick={() => navigate("/contact")}
+                  >
+                    <span className="flex items-center gap-3 text-gradient-gold">
+                      <Star className="w-5 h-5" />
+                      Reserve Your Stay
+                    </span>
+                  </Button>
+                </div>
 
-               {/* Trust Indicators */}
-               <div className="grid grid-cols-3 gap-6 pt-8 border-t border-royal-white/20">
-                 <div className="text-center">
-                   <Star className="w-8 h-8 text-light-gold mx-auto mb-2" />
-                   <p className="text-sm font-medium text-royal-white">5-Star</p>
-                   <p className="text-xs text-royal-white/70">Luxury</p>
-                 </div>
-                 <div className="text-center">
-                   <Award className="w-8 h-8 text-light-gold mx-auto mb-2" />
-                   <p className="text-sm font-medium text-royal-white">Premium</p>
-                   <p className="text-xs text-royal-white/70">Service</p>
-                 </div>
-                 <div className="text-center">
-                   <Crown className="w-8 h-8 text-light-gold mx-auto mb-2" />
-                   <p className="text-sm font-medium text-royal-white">Royal</p>
-                   <p className="text-xs text-royal-white/70">Treatment</p>
-                 </div>
-               </div>
-             </div>
+                {/* Royal Trust Indicators */}
+                <div className="grid grid-cols-3 gap-8 pt-8 border-t border-royal-white/20">
+                  <div className="text-center group luxury-hover">
+                    <div className="card-glass p-4 rounded-xl mb-3">
+                      <Star className="w-10 h-10 text-champagne-gold mx-auto" />
+                    </div>
+                    <p className="text-lg font-cormorant font-semibold text-royal-white">5-Star</p>
+                    <p className="text-sm text-royal-white/70 font-medium">Luxury</p>
+                  </div>
+                  <div className="text-center group luxury-hover">
+                    <div className="card-glass p-4 rounded-xl mb-3">
+                      <Award className="w-10 h-10 text-champagne-gold mx-auto" />
+                    </div>
+                    <p className="text-lg font-cormorant font-semibold text-royal-white">Premium</p>
+                    <p className="text-sm text-royal-white/70 font-medium">Service</p>
+                  </div>
+                  <div className="text-center group luxury-hover">
+                    <div className="card-glass p-4 rounded-xl mb-3">
+                      <Crown className="w-10 h-10 text-champagne-gold mx-auto" />
+                    </div>
+                    <p className="text-lg font-cormorant font-semibold text-royal-white">Royal</p>
+                    <p className="text-sm text-royal-white/70 font-medium">Treatment</p>
+                  </div>
+                </div>
+              </div>
 
-           {/* Right Content - Additional Visual Elements */}
-           <div className="hidden lg:block">
-             <div className="relative">
-               {/* Floating Elements */}
-               <div className="absolute top-10 right-10 card-royal p-6 royal-hover">
-                 <div className="text-center">
-                   <Crown className="w-12 h-12 text-deep-gold mx-auto mb-2" />
-                   <p className="font-semibold text-deep-maroon">Royal Suites</p>
-                   <p className="text-sm text-muted-foreground">Available Now</p>
-                 </div>
-               </div>
-               
-               <div className="absolute bottom-20 left-10 card-royal p-6 royal-hover">
-                 <div className="text-center">
-                   <Star className="w-12 h-12 text-deep-gold mx-auto mb-2" />
-                   <p className="font-semibold text-deep-maroon">5-Star Rating</p>
-                   <p className="text-sm text-muted-foreground">Premium Quality</p>
-                 </div>
-               </div>
-             </div>
-           </div>
+            {/* Right Content - Luxury Visual Elements */}
+            <div className="hidden lg:block relative">
+              <div className="relative h-full flex items-center justify-center">
+                {/* Floating Royal Elements */}
+                <div className="absolute top-16 right-12 card-premium p-8 luxury-hover floating-particles">
+                  <div className="text-center">
+                    <Crown className="w-16 h-16 text-champagne-gold mx-auto mb-4 crown-float" />
+                    <h3 className="font-playfair font-bold text-xl text-imperial-burgundy mb-2">Royal Suites</h3>
+                    <p className="text-charcoal-gray/80 font-cormorant">Available Now</p>
+                    <div className="w-12 h-0.5 bg-gradient-gold mx-auto mt-3"></div>
+                  </div>
+                </div>
+                
+                <div className="absolute bottom-24 left-8 card-premium p-8 luxury-hover floating-particles">
+                  <div className="text-center">
+                    <Star className="w-16 h-16 text-champagne-gold mx-auto mb-4 crown-float" />
+                    <h3 className="font-playfair font-bold text-xl text-imperial-burgundy mb-2">5-Star Rating</h3>
+                    <p className="text-charcoal-gray/80 font-cormorant">Premium Quality</p>
+                    <div className="w-12 h-0.5 bg-gradient-gold mx-auto mt-3"></div>
+                  </div>
+                </div>
+
+                {/* Central Royal Badge */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 card-glass p-12 rounded-full luxury-hover">
+                  <div className="text-center">
+                    <Crown className="w-20 h-20 text-champagne-gold mx-auto mb-4 crown-float" strokeWidth={1} />
+                    <h3 className="font-playfair font-bold text-2xl text-gradient-imperial mb-2">ROYAL</h3>
+                    <p className="text-charcoal-gray/70 font-cormorant text-lg">EXPERIENCE</p>
+                  </div>
+                </div>
+              </div>
+            </div>
          </div>
        </div>
      </div>
 
-      {/* Booking Widget - Fixed positioning */}
-      <div className="relative z-20 pb-8">
+      {/* Royal Booking Widget */}
+      <div className="relative z-20 pb-12">
         <div className="max-w-6xl mx-auto px-6">
-          <BookingWidget />
+          <div className="card-glass backdrop-blur-xl rounded-2xl p-2 border border-royal-white/30 shadow-luxury">
+            <BookingWidget />
+          </div>
         </div>
       </div>
 

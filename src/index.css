@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+/* Fonts imported in index.html for better performance */
 
 @tailwind base;
 @tailwind components;
@@ -8,17 +8,24 @@
 
 @layer base {
   :root {
-    /* Maison Luxe Brand Colors - Maroon Palette */
-    --deep-maroon: 351 75% 24%;     /* #6B0F1A */
-    --light-maroon: 6 57% 49%;      /* #C44536 */
+    /* Royal Luxury Brand Colors - Enhanced Palette */
+    --imperial-burgundy: 340 90% 15%;    /* Deep royal burgundy */
+    --deep-maroon: 351 75% 24%;          /* #6B0F1A */
+    --light-maroon: 6 57% 49%;           /* #C44536*/
+    --royal-crimson: 348 75% 35%;        /* Rich crimson accent */
     
-    /* Maison Luxe Brand Colors - Gold Palette */
-    --deep-gold: 45 89% 38%;        /* #B8860B */
-    --light-gold: 51 100% 50%;      /* #FFD700 */
+    /* Luxury Gold Palette */
+    --champagne-gold: 45 95% 65%;        /* Light champagne */
+    --deep-gold: 45 89% 38%;             /* #B8860B */
+    --light-gold: 51 100% 50%;           /* #FFD700 */
+    --bronze-gold: 30 75% 25%;           /* Rich bronze */
     
-    /* Neutral Colors */
-    --royal-white: 0 0% 100%;       /* #FFFFFF */
-    --charcoal-gray: 0 0% 18%;      /* #2E2E2E */
+    /* Premium Neutrals */
+    --ivory: 60 9% 98%;                  /* Warm ivory white */
+    --royal-white: 0 0% 100%;            /* Pure white */
+    --platinum: 0 0% 85%;                /* Platinum silver */
+    --charcoal-gray: 0 0% 18%;           /* #2E2E2E */
+    --obsidian: 0 0% 8%;                 /* Deep black */
     
     /* Design System Colors */
     --background: var(--royal-white);
@@ -51,22 +58,30 @@
 
     --radius: 0.75rem;
     
-    /* Royal Gradients - Smooth Color Grading */
+    /* Royal Luxury Gradients */
+    --gradient-imperial: linear-gradient(135deg, hsl(var(--imperial-burgundy)) 0%, hsl(var(--deep-maroon)) 30%, hsl(var(--royal-crimson)) 70%, hsl(var(--light-maroon)) 100%);
     --gradient-maroon: linear-gradient(135deg, hsl(var(--deep-maroon)) 0%, hsl(351 60% 35%) 25%, hsl(351 50% 45%) 50%, hsl(var(--light-maroon)) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(var(--deep-gold)) 0%, hsl(45 75% 45%) 25%, hsl(45 85% 55%) 50%, hsl(var(--light-gold)) 100%);
-    --gradient-royal: linear-gradient(135deg, hsl(var(--deep-maroon)) 0%, hsl(351 65% 30%) 20%, hsl(25 70% 40%) 40%, hsl(35 75% 45%) 60%, hsl(var(--deep-gold)) 80%, hsl(var(--light-gold)) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(var(--royal-white)) 0%, hsl(0 0% 99%) 30%, hsl(0 0% 98%) 70%, hsl(0 0% 97%) 100%);
-    --gradient-hero-overlay: linear-gradient(135deg, hsl(var(--deep-maroon) / 0.75) 0%, hsl(var(--deep-maroon) / 0.6) 15%, hsl(var(--charcoal-gray) / 0.5) 40%, hsl(var(--deep-maroon) / 0.3) 65%, hsl(var(--charcoal-gray) / 0.2) 85%, transparent 100%);
-    --gradient-card-overlay: linear-gradient(180deg, transparent 0%, hsl(var(--charcoal-gray) / 0.1) 40%, hsl(var(--charcoal-gray) / 0.2) 70%, hsl(var(--charcoal-gray) / 0.3) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(var(--bronze-gold)) 0%, hsl(var(--deep-gold)) 30%, hsl(45 85% 55%) 70%, hsl(var(--champagne-gold)) 100%);
+    --gradient-royal: linear-gradient(135deg, hsl(var(--imperial-burgundy)) 0%, hsl(var(--deep-maroon)) 20%, hsl(var(--bronze-gold)) 40%, hsl(var(--deep-gold)) 60%, hsl(var(--champagne-gold)) 80%, hsl(var(--light-gold)) 100%);
+    --gradient-glass: linear-gradient(135deg, hsl(var(--royal-white) / 0.15) 0%, hsl(var(--ivory) / 0.1) 50%, hsl(var(--platinum) / 0.05) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--ivory)) 0%, hsl(var(--royal-white)) 30%, hsl(0 0% 98%) 70%, hsl(0 0% 97%) 100%);
+    --gradient-hero-overlay: linear-gradient(135deg, hsl(var(--imperial-burgundy) / 0.85) 0%, hsl(var(--deep-maroon) / 0.7) 15%, hsl(var(--obsidian) / 0.6) 40%, hsl(var(--deep-maroon) / 0.4) 65%, hsl(var(--charcoal-gray) / 0.2) 85%, transparent 100%);
+    --gradient-card-luxury: linear-gradient(145deg, hsl(var(--royal-white)) 0%, hsl(var(--ivory)) 50%, hsl(var(--platinum) / 0.1) 100%);
+    --gradient-metallic: linear-gradient(135deg, hsl(var(--platinum)) 0%, hsl(var(--royal-white)) 25%, hsl(var(--champagne-gold) / 0.3) 50%, hsl(var(--platinum)) 75%, hsl(var(--royal-white)) 100%);
     
-    /* Smooth Text Gradients */
+    /* Luxury Text Gradients */
+    --text-gradient-imperial: linear-gradient(135deg, hsl(var(--imperial-burgundy)) 0%, hsl(var(--deep-maroon)) 25%, hsl(var(--royal-crimson)) 50%, hsl(var(--light-maroon)) 75%, hsl(6 50% 55%) 100%);
     --text-gradient-maroon: linear-gradient(135deg, hsl(var(--deep-maroon)) 0%, hsl(351 65% 30%) 20%, hsl(351 55% 40%) 50%, hsl(var(--light-maroon)) 80%, hsl(6 50% 55%) 100%);
-    --text-gradient-gold: linear-gradient(135deg, hsl(var(--deep-gold)) 0%, hsl(45 80% 45%) 20%, hsl(45 90% 55%) 50%, hsl(var(--light-gold)) 80%, hsl(51 95% 60%) 100%);
+    --text-gradient-gold: linear-gradient(135deg, hsl(var(--bronze-gold)) 0%, hsl(var(--deep-gold)) 25%, hsl(45 90% 55%) 50%, hsl(var(--champagne-gold)) 75%, hsl(var(--light-gold)) 100%);
+    --text-gradient-metallic: linear-gradient(135deg, hsl(var(--platinum)) 0%, hsl(var(--champagne-gold)) 30%, hsl(var(--light-gold)) 50%, hsl(var(--champagne-gold)) 70%, hsl(var(--platinum)) 100%);
     
-    /* Royal Shadows - Enhanced */
-    --shadow-royal: 0 25px 50px -12px hsl(var(--deep-maroon) / 0.25), 0 10px 30px -10px hsl(var(--light-maroon) / 0.1);
-    --shadow-gold: 0 25px 50px -12px hsl(var(--deep-gold) / 0.25), 0 10px 30px -10px hsl(var(--light-gold) / 0.1);
-    --shadow-elegant: 0 10px 40px -10px hsl(var(--charcoal-gray) / 0.1);
+    /* Royal Luxury Shadows */
+    --shadow-imperial: 0 30px 60px -15px hsl(var(--imperial-burgundy) / 0.4), 0 15px 35px -10px hsl(var(--deep-maroon) / 0.2), 0 5px 15px -5px hsl(var(--royal-crimson) / 0.1);
+    --shadow-royal: 0 25px 50px -12px hsl(var(--deep-maroon) / 0.3), 0 10px 30px -10px hsl(var(--light-maroon) / 0.15), inset 0 1px 0 hsl(var(--royal-white) / 0.1);
+    --shadow-gold: 0 25px 50px -12px hsl(var(--deep-gold) / 0.3), 0 10px 30px -10px hsl(var(--champagne-gold) / 0.2), 0 5px 15px -5px hsl(var(--light-gold) / 0.1);
+    --shadow-glass: 0 8px 32px hsl(var(--charcoal-gray) / 0.12), 0 4px 16px hsl(var(--obsidian) / 0.08), inset 0 1px 0 hsl(var(--royal-white) / 0.2);
+    --shadow-elegant: 0 15px 45px -10px hsl(var(--charcoal-gray) / 0.15), 0 8px 25px -8px hsl(var(--obsidian) / 0.1);
+    --shadow-luxury: 0 20px 40px -10px hsl(var(--deep-maroon) / 0.2), 0 10px 25px -5px hsl(var(--deep-gold) / 0.1), inset 0 1px 2px hsl(var(--royal-white) / 0.3);
     
     /* Animations */
     --transition-royal: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -134,23 +149,50 @@
   }
 
   body {
-    @apply bg-background text-foreground font-poppins;
+    @apply bg-background text-foreground font-poppins antialiased;
+    font-feature-settings: "liga", "kern";
+    text-rendering: optimizeLegibility;
   }
 }
 
 @layer components {
-  /* Royal Button Variants - Smooth Gradients */
+  /* Royal Luxury Button Variants */
   .btn-royal {
-    background: var(--gradient-maroon);
-    @apply text-royal-white font-semibold px-8 py-4 rounded-xl shadow-royal transition-all duration-500 hover:shadow-gold hover:scale-105;
+    background: var(--gradient-royal);
+    @apply text-royal-white font-semibold px-8 py-4 rounded-xl shadow-royal transition-all duration-500 hover:shadow-imperial hover:scale-105 relative overflow-hidden;
+  }
+  
+  .btn-royal::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-glass opacity-0 transition-opacity duration-300;
+  }
+  
+  .btn-royal:hover::before {
+    @apply opacity-100;
+  }
+  
+  .btn-imperial {
+    background: var(--gradient-imperial);
+    @apply text-royal-white font-semibold px-8 py-4 rounded-xl shadow-imperial transition-all duration-500 hover:shadow-luxury hover:scale-105 relative overflow-hidden;
   }
   
   .btn-gold {
     background: var(--gradient-gold);
-    @apply text-charcoal-gray font-semibold px-8 py-4 rounded-xl shadow-gold transition-all duration-500 hover:shadow-royal hover:scale-105;
+    @apply text-obsidian font-semibold px-8 py-4 rounded-xl shadow-gold transition-all duration-500 hover:shadow-luxury hover:scale-105 relative overflow-hidden;
   }
   
-  /* Royal Text Styles - Smooth Gradients */
+  .btn-glass {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(20px);
+    @apply text-charcoal-gray font-medium px-6 py-3 rounded-lg shadow-glass border border-royal-white/20 transition-all duration-300 hover:shadow-elegant hover:bg-royal-white/10;
+  }
+  
+  /* Royal Text Styles */
+  .text-gradient-imperial {
+    background: var(--text-gradient-imperial);
+    @apply bg-clip-text text-transparent;
+  }
+  
   .text-gradient-maroon {
     background: var(--text-gradient-maroon);
     @apply bg-clip-text text-transparent;
@@ -161,7 +203,25 @@
     @apply bg-clip-text text-transparent;
   }
   
+  .text-gradient-metallic {
+    background: var(--text-gradient-metallic);
+    @apply bg-clip-text text-transparent;
+  }
+  
+  /* Royal Typography Classes */
+  .text-royal-heading {
+    @apply font-playfair font-bold tracking-tight;
+  }
+  
+  .text-luxury-accent {
+    @apply font-cormorant font-medium tracking-wide;
+  }
+  
   /* Royal Backgrounds */
+  .bg-gradient-imperial {
+    background: var(--gradient-imperial);
+  }
+  
   .bg-gradient-maroon {
     background: var(--gradient-maroon);
   }
@@ -174,24 +234,128 @@
     background: var(--gradient-royal);
   }
   
-  /* Royal Cards */
-  .card-royal {
-    @apply bg-royal-white rounded-2xl shadow-elegant border border-border backdrop-blur-sm;
+  .bg-gradient-glass {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(20px);
   }
   
-  /* Crown Animation */
+  .bg-gradient-metallic {
+    background: var(--gradient-metallic);
+  }
+  
+  /* Royal Cards */
+  .card-royal {
+    background: var(--gradient-card-luxury);
+    @apply rounded-2xl shadow-luxury border border-royal-white/30 backdrop-blur-sm relative overflow-hidden;
+  }
+  
+  .card-royal::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-metallic opacity-5 pointer-events-none;
+  }
+  
+  .card-glass {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(20px);
+    @apply rounded-xl shadow-glass border border-royal-white/20 relative;
+  }
+  
+  .card-premium {
+    background: var(--gradient-card-luxury);
+    @apply rounded-2xl shadow-imperial border border-champagne-gold/20 relative overflow-hidden;
+  }
+  
+  .card-premium::after {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-0.5 bg-gradient-gold;
+  }
+  
+  /* Enhanced Crown Animation */
   .crown-float {
-    animation: crown-float 3s ease-in-out infinite;
+    animation: crown-float 4s ease-in-out infinite;
   }
   
   @keyframes crown-float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg); 
+      filter: drop-shadow(0 0 10px hsl(var(--light-gold) / 0.3));
+    }
+    25% { 
+      transform: translateY(-8px) rotate(2deg); 
+      filter: drop-shadow(0 0 20px hsl(var(--light-gold) / 0.5));
+    }
+    50% { 
+      transform: translateY(-12px) rotate(0deg); 
+      filter: drop-shadow(0 0 25px hsl(var(--light-gold) / 0.7));
+    }
+    75% { 
+      transform: translateY(-8px) rotate(-2deg); 
+      filter: drop-shadow(0 0 20px hsl(var(--light-gold) / 0.5));
+    }
   }
   
   /* Royal Hover Effects */
   .royal-hover {
-    @apply transition-all duration-500 hover:shadow-royal hover:-translate-y-2;
+    @apply transition-all duration-500 hover:shadow-imperial hover:-translate-y-3 hover:scale-105;
+  }
+  
+  .glass-hover {
+    @apply transition-all duration-300 hover:shadow-glass hover:bg-royal-white/10 hover:-translate-y-1;
+  }
+  
+  .luxury-hover {
+    @apply transition-all duration-500 hover:shadow-luxury hover:-translate-y-2 hover:scale-[1.02];
+  }
+
+  /* Premium Loading Animation */
+  .luxury-shimmer {
+    background: linear-gradient(90deg, hsl(var(--platinum)) 25%, hsl(var(--champagne-gold) / 0.3) 50%, hsl(var(--platinum)) 75%);
+    background-size: 200% 100%;
+    animation: luxury-shimmer 2s infinite linear;
+  }
+
+  @keyframes luxury-shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  
+  /* Floating Particles Animation */
+  .floating-particles {
+    position: relative;
+  }
+  
+  .floating-particles::before,
+  .floating-particles::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--gradient-gold);
+    border-radius: 50%;
+    animation: float-particles 6s ease-in-out infinite;
+  }
+  
+  .floating-particles::before {
+    top: 20%;
+    left: 10%;
+    animation-delay: -2s;
+  }
+  
+  .floating-particles::after {
+    top: 60%;
+    right: 15%;
+    animation-delay: -4s;
+  }
+  
+  @keyframes float-particles {
+    0%, 100% { 
+      transform: translateY(0px) scale(1); 
+      opacity: 0.4;
+    }
+    50% { 
+      transform: translateY(-20px) scale(1.2); 
+      opacity: 0.8;
+    }
   }
 
   /* Button Click Animation */

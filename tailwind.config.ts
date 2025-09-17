@@ -62,21 +62,33 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Maison Luxe Brand Colors
+				// Royal Luxury Brand Colors
+				'imperial-burgundy': 'hsl(var(--imperial-burgundy))',
 				'deep-maroon': 'hsl(var(--deep-maroon))',
 				'light-maroon': 'hsl(var(--light-maroon))',
+				'royal-crimson': 'hsl(var(--royal-crimson))',
+				'champagne-gold': 'hsl(var(--champagne-gold))',
 				'deep-gold': 'hsl(var(--deep-gold))',
 				'light-gold': 'hsl(var(--light-gold))',
+				'bronze-gold': 'hsl(var(--bronze-gold))',
+				'ivory': 'hsl(var(--ivory))',
 				'royal-white': 'hsl(var(--royal-white))',
-				'charcoal-gray': 'hsl(var(--charcoal-gray))'
+				'platinum': 'hsl(var(--platinum))',
+				'charcoal-gray': 'hsl(var(--charcoal-gray))',
+				'obsidian': 'hsl(var(--obsidian))'
 			},
 			fontFamily: {
+				'playfair': ['Playfair Display', 'serif'],
+				'cormorant': ['Cormorant Garamond', 'serif'],
 				'poppins': ['Poppins', 'sans-serif'],
 			},
 			boxShadow: {
+				'imperial': 'var(--shadow-imperial)',
 				'royal': 'var(--shadow-royal)',
 				'gold': 'var(--shadow-gold)',
-				'elegant': 'var(--shadow-elegant)'
+				'glass': 'var(--shadow-glass)',
+				'elegant': 'var(--shadow-elegant)',
+				'luxury': 'var(--shadow-luxury)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
