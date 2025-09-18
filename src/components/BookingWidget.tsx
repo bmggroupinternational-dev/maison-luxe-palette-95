@@ -16,9 +16,10 @@ const BookingWidget = () => {
     const bookingParams = new URLSearchParams({
       checkIn: checkIn.toISOString(),
       checkOut: checkOut.toISOString(),
-      type: 'booking'
+      adults: '1',
+      children: '0'
     });
-    navigate(`/contact?${bookingParams.toString()}`);
+    navigate(`/booking?${bookingParams.toString()}`);
   };
 
   return (
