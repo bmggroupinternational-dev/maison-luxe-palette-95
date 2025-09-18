@@ -30,20 +30,18 @@ const Restaurant = () => {
 
   return (
     <section ref={sectionRef} className="relative py-24 overflow-hidden">
-      {/* Parallax Background */}
-      <motion.div 
-        style={{ y: backgroundY }}
-        className="absolute inset-0 -z-10"
-      >
-        <div className="absolute inset-0 bg-gradient-hero-overlay" />
+      {/* Fixed Background */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-deep-royal/90 via-royal-navy/85 to-deep-royal/95" />
+        <div className="absolute inset-0 bg-black/40" />
         <img 
           src="/lovable-uploads/a8e4d933-6da7-460b-9b67-56645a8c215a.png"
           alt="Fine dining restaurant"
-          className="w-full h-[120%] object-cover"
+          className="w-full h-full object-cover opacity-60"
           loading="lazy"
           fetchPriority="auto"
         />
-      </motion.div>
+      </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-20 items-start">
@@ -55,23 +53,23 @@ const Restaurant = () => {
             viewport={{ once: true }}
             className="text-royal-white space-y-8"
           >
-            <div className="space-y-6">
-              <Badge variant="outline" className="mb-6 border-royal-white/30 text-royal-white px-4 py-2">
+            <div className="space-y-6 bg-deep-royal/20 backdrop-blur-sm p-8 rounded-2xl border border-light-gold/20">
+              <Badge variant="outline" className="mb-6 border-light-gold/50 text-light-gold px-4 py-2 bg-deep-gold/10">
                 <ChefHat className="w-4 h-4 mr-2" />
                 Fine Dining Experience
               </Badge>
               
-              <h2 className="text-5xl md:text-6xl font-bold leading-tight">
+              <h2 className="text-5xl md:text-6xl font-bold leading-tight drop-shadow-lg">
                 <span className="text-gradient-gold">Culinary</span>
                 <br />
-                <span className="text-royal-white">Excellence</span>
+                <span className="text-royal-white drop-shadow-md">Excellence</span>
               </h2>
               
               <div className="space-y-4">
-                <p className="text-xl text-royal-white/90 leading-relaxed">
+                <p className="text-xl text-royal-white drop-shadow-sm leading-relaxed">
                   Experience extraordinary cuisine crafted by world-renowned chefs in an atmosphere of refined elegance.
                 </p>
-                <p className="text-lg text-royal-white/80 leading-relaxed">
+                <p className="text-lg text-royal-white/90 drop-shadow-sm leading-relaxed">
                   Our restaurant offers an unforgettable journey through innovative flavors and impeccable presentation, where every dish tells a story of culinary mastery.
                 </p>
               </div>
@@ -141,7 +139,7 @@ const Restaurant = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="card-royal bg-royal-white/15 backdrop-blur-sm border-royal-white/30 royal-hover"
+                className="card-royal bg-deep-royal/30 backdrop-blur-md border-light-gold/30 royal-hover shadow-xl"
               >
                 <div className="p-8">
                   <h3 className="text-2xl font-bold text-royal-white mb-6 text-gradient-gold">
