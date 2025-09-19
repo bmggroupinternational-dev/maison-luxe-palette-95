@@ -10,8 +10,10 @@ const Header = () => {
 
   const navItems = [
     { label: "Home", href: "#home" },
-    { label: "Apartments", href: "/apartments" },
-    { label: "Location", href: "#location" },
+    { label: "Suites", href: "/apartments" },
+    { label: "Experiences", href: "#experiences" },
+    { label: "Dining", href: "#restaurant" },
+    { label: "Offers", href: "#offers" },
     { label: "Contact", href: "/contact" }
   ];
 
@@ -31,15 +33,15 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6">
             {navItems.map((item, index) => (
               <button
                 key={index}
                 onClick={() => handleNavigation(item.href, navigate)}
-                className="text-charcoal-gray/80 hover:text-imperial-burgundy transition-all duration-300 font-medium hover:scale-105 transform relative group"
+                className="text-charcoal-gray/80 hover:text-imperial-burgundy transition-all duration-300 font-medium hover:scale-105 transform relative group px-3 py-2 rounded-lg hover:bg-champagne-gold/5"
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-gold group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute -bottom-1 left-3 w-0 h-0.5 bg-gradient-gold group-hover:w-[calc(100%-24px)] transition-all duration-300"></span>
               </button>
             ))}
           </nav>
@@ -57,8 +59,8 @@ const Header = () => {
               </div>
             </div>
             <Button 
-              className="bg-gradient-imperial text-royal-white font-semibold px-6 py-2 rounded-lg shadow-imperial hover:shadow-luxury hover:scale-105 transition-all duration-300"
-              onClick={() => navigate("/contact")}
+              className="bg-gradient-imperial text-royal-white font-semibold px-6 py-2 rounded-lg shadow-luxury hover:shadow-imperial hover:scale-105 transition-all duration-300 border border-champagne-gold/20"
+              onClick={() => navigate("/booking")}
             >
               <Crown className="w-4 h-4 mr-2" />
               Book Now
@@ -100,9 +102,9 @@ const Header = () => {
                   <span>info@maisonluxe.tz</span>
                 </div>
                 <Button 
-                  className="bg-gradient-imperial text-royal-white font-semibold w-full py-3 rounded-lg shadow-imperial hover:shadow-luxury transition-all duration-300"
+                  className="bg-gradient-imperial text-royal-white font-semibold w-full py-3 rounded-lg shadow-luxury hover:shadow-imperial transition-all duration-300 border border-champagne-gold/20"
                   onClick={() => {
-                    navigate("/contact");
+                    navigate("/booking");
                     setIsMenuOpen(false);
                   }}
                 >

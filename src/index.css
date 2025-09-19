@@ -75,13 +75,13 @@
     --text-gradient-gold: linear-gradient(135deg, hsl(var(--bronze-gold)) 0%, hsl(var(--deep-gold)) 25%, hsl(45 90% 55%) 50%, hsl(var(--champagne-gold)) 75%, hsl(var(--light-gold)) 100%);
     --text-gradient-metallic: linear-gradient(135deg, hsl(var(--platinum)) 0%, hsl(var(--champagne-gold)) 30%, hsl(var(--light-gold)) 50%, hsl(var(--champagne-gold)) 70%, hsl(var(--platinum)) 100%);
     
-    /* Royal Luxury Shadows */
-    --shadow-imperial: 0 30px 60px -15px hsl(var(--imperial-burgundy) / 0.4), 0 15px 35px -10px hsl(var(--deep-maroon) / 0.2), 0 5px 15px -5px hsl(var(--royal-crimson) / 0.1);
-    --shadow-royal: 0 25px 50px -12px hsl(var(--deep-maroon) / 0.3), 0 10px 30px -10px hsl(var(--light-maroon) / 0.15), inset 0 1px 0 hsl(var(--royal-white) / 0.1);
-    --shadow-gold: 0 25px 50px -12px hsl(var(--deep-gold) / 0.3), 0 10px 30px -10px hsl(var(--champagne-gold) / 0.2), 0 5px 15px -5px hsl(var(--light-gold) / 0.1);
-    --shadow-glass: 0 8px 32px hsl(var(--charcoal-gray) / 0.12), 0 4px 16px hsl(var(--obsidian) / 0.08), inset 0 1px 0 hsl(var(--royal-white) / 0.2);
-    --shadow-elegant: 0 15px 45px -10px hsl(var(--charcoal-gray) / 0.15), 0 8px 25px -8px hsl(var(--obsidian) / 0.1);
-    --shadow-luxury: 0 20px 40px -10px hsl(var(--deep-maroon) / 0.2), 0 10px 25px -5px hsl(var(--deep-gold) / 0.1), inset 0 1px 2px hsl(var(--royal-white) / 0.3);
+    /* Royal Luxury Shadows - Enhanced Depth System */
+    --shadow-imperial: 0 32px 64px -15px hsl(var(--imperial-burgundy) / 0.45), 0 16px 40px -10px hsl(var(--deep-maroon) / 0.25), 0 6px 20px -5px hsl(var(--royal-crimson) / 0.15), inset 0 1px 0 hsl(var(--royal-white) / 0.1);
+    --shadow-royal: 0 28px 56px -12px hsl(var(--deep-maroon) / 0.35), 0 12px 32px -10px hsl(var(--light-maroon) / 0.2), 0 4px 16px -3px hsl(var(--champagne-gold) / 0.1), inset 0 1px 0 hsl(var(--royal-white) / 0.15);
+    --shadow-gold: 0 28px 56px -12px hsl(var(--deep-gold) / 0.35), 0 12px 32px -10px hsl(var(--champagne-gold) / 0.25), 0 6px 20px -5px hsl(var(--light-gold) / 0.15), 0 2px 8px -2px hsl(var(--bronze-gold) / 0.1);
+    --shadow-glass: 0 12px 40px hsl(var(--charcoal-gray) / 0.15), 0 6px 20px hsl(var(--obsidian) / 0.1), 0 2px 8px hsl(var(--champagne-gold) / 0.08), inset 0 1px 0 hsl(var(--royal-white) / 0.25), inset 0 -1px 0 hsl(var(--champagne-gold) / 0.1);
+    --shadow-elegant: 0 20px 50px -10px hsl(var(--charcoal-gray) / 0.18), 0 10px 30px -8px hsl(var(--obsidian) / 0.12), 0 4px 12px -2px hsl(var(--deep-gold) / 0.08);
+    --shadow-luxury: 0 24px 48px -10px hsl(var(--deep-maroon) / 0.25), 0 12px 30px -5px hsl(var(--deep-gold) / 0.15), 0 4px 16px -2px hsl(var(--champagne-gold) / 0.1), inset 0 1px 3px hsl(var(--royal-white) / 0.35);
     
     /* Animations */
     --transition-royal: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);

@@ -8,12 +8,16 @@ import RelaxingExperiences from "@/components/RelaxingExperiences";
 import Gallery from "@/components/Gallery";
 import Footer from "@/components/Footer";
 import ImageOptimizer from "@/components/ImageOptimizer";
+import LoyaltyProgram from "@/components/LoyaltyProgram";
+import PromotionsPopup from "@/components/PromotionsPopup";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <ImageOptimizer />
       <Header />
+      <LoyaltyProgram />
+      <PromotionsPopup />
       <main>
         <section id="home">
           <Hero />
